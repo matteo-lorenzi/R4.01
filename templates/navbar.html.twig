@@ -1,0 +1,62 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+	<a class="navbar-brand" href="{{ path("app_default_index") }}">
+		<i class="fas fa-home"></i>
+		{% trans %}templates.navbar.titre{% endtrans %}
+		<!--Accueil Boutique!-->
+	</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item">
+				<a class="nav-link" href="{{ path("app_boutique") }}">
+					<i class="fas fa-store"></i>
+					{% trans %}templates.navbar.Boutique{% endtrans %}
+					<!--Boutique-->
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="{{ path("app_default_contact") }}">
+					<i class="fas fa-comments"></i>
+					{% trans %}templates.navbar.Contact{% endtrans %}
+					<!--Contact-->
+				</a>
+			</li>
+			{# TODO : ajouter au fil des TPs les autres éléments du menu #}
+		</ul>
+		<!-- Début champ de recherche -->
+		{# TODO #}
+		<!-- Fin champ de recherche -->
+		<!-- Début menu des monnaies -->
+		{# TODO #}
+		<!-- Fin menu des monnaies -->
+		<!-- Début menu des langues -->
+			<div class="dropdown"> <button class="btn btn-secondary dropdown-toggle" type="button" id="langDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				{% if app.request.attributes.get('_locale') == 'fr' %}
+					<img src="{{ asset('images/locale/fr.png') }}" alt="Français">
+				{% elseif app.request.attributes.get('_locale') == 'en' %}
+					<img src="{{ asset('images/locale//en.png') }}" alt="English">
+				{% elseif app.request.attributes.get('_locale') == 'jp' %}
+					<img src="{{ asset('images/locale//jp.png') }}" alt="日本語">
+				{% elseif app.request.attributes.get('_locale') == 'it' %}
+					<img src="{{ asset('images/locale//it.png') }}" alt="Italiano">
+				{% endif %}
+			</button>
+			<div class="dropdown-menu" aria-labelledby="langDropdown">
+				{% for uneLocale in supported_locales | split('|') %}
+					{% if uneLocale != app.request.attributes.get('_locale') %}
+						{% set route = app.request.attributes.get('_route') %}
+						{% set params = app.request.attributes.get('_route_params') %}
+						{% set params = params | merge({'_locale': uneLocale }) %}
+						<a class="dropdown-item" href="{{ path(route, params) }}">
+							<img src="{{ asset('images/locale/' ~ uneLocale ~ '.png') }}" alt="{{ uneLocale }}">
+						</a>
+					{% endif %}
+				{% endfor %}
+			</div>
+		</div>
+
+	</div>
+	<!-- Fin Menu des langues -->
+</div></nav>

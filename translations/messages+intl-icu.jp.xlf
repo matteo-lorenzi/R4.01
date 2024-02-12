@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="ja" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="_HLEtGg" resname="boutique.index.Boutique">
+        <source>boutique.index.Boutique</source>
+        <target>ブティック：</target>
+      </trans-unit>
+      <trans-unit id="lBu9WBH" resname="boutique.index.Rayon">
+        <source>boutique.index.Rayon</source>
+        <target>レイヨン（複数）</target>
+      </trans-unit>
+      <trans-unit id="xTC0QAt" resname="boutique.rayon.title">
+        <source>boutique.rayon.title</source>
+        <target>レイヨン -</target>
+      </trans-unit>
+      <trans-unit id="zATGDON" resname="boutique.rayon.heading">
+        <source>boutique.rayon.heading</source>
+        <target>レイヨン -</target>
+      </trans-unit>
+      <trans-unit id="IIf.adJ" resname="boutique.rayon.category">
+        <source>boutique.rayon.category</source>
+        <target>カテゴリ</target>
+      </trans-unit>
+      <trans-unit id="lAzTC.J" resname="boutique.rayon.products">
+        <source>boutique.rayon.products</source>
+        <target>製品</target>
+      </trans-unit>
+      <trans-unit id="l6kRDxS" resname="boutique.rayon.see_more">
+        <source>boutique.rayon.see_more</source>
+        <target>詳細を見る</target>
+      </trans-unit>
+      <trans-unit id="bmD3TT9" resname="templates.navbar.titre">
+        <source>templates.navbar.titre</source>
+        <target>ホームボディーショップ！</target>
+      </trans-unit>
+      <trans-unit id="uSAqq6." resname="templates.navbar.Boutique">
+        <source>templates.navbar.Boutique</source>
+        <target>店</target>
+      </trans-unit>
+      <trans-unit id="BakxtDO" resname="templates.navbar.Contact">
+        <source>templates.navbar.Contact</source>
+        <target>お問い合わせ</target>
+      </trans-unit>
+      <trans-unit id="s0UfsV8" resname="home.index.title">
+        <source>home.index.title</source>
+        <target>ホーム</target>
+      </trans-unit>
+      <trans-unit id="WPTAwy." resname="home.index.header">
+        <source>home.index.header</source>
+        <target>店 R4.01</target>
+      </trans-unit>
+      <trans-unit id="d19ZeT2" resname="home.index.logo_alt">
+        <source>home.index.logo_alt</source>
+        <target>店のロゴ</target>
+      </trans-unit>
+      <trans-unit id="rWklkzW" resname="home.index.card_text">
+        <source>home.index.card_text</source>
+        <target>ここには何も売られていません、ただ学ぶためです...</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

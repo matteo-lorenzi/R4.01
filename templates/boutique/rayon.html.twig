@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% trans %}boutique.rayon.title{% endtrans %} - {{ categorie.libelle }}{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1 class="mb-4">{% trans %}boutique.rayon.heading{% endtrans %} - {{ categorie.libelle }}</h1>
+
+    <p class="lead">{% trans %}boutique.rayon.category{% endtrans %}: {{ categorie.libelle }}</p>
+
+    <h2>{% trans %}boutique.rayon.products{% endtrans %}:</h2>
+    <div class="row">
+        {% for produit in produits %}
+        <div class="col-md-4 mb-4">
+            <div class="card clickable">
+                <img src="{{ asset(produit.visuel) }}" class="card-img-produit" alt="{{ produit.libelle }}" style="height: 200px; object-fit: cover;">
+                <div class="card-body">
+                    <h5 class="card-title">{{ produit.libelle }}</h5>
+                    <p class="card-text">{{ produit.texte }}</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="badge badge-primary">{{ produit.prix }} €</span>
+                        <a href="#" class="btn btn-sm btn-outline-secondary">{% trans %}boutique.rayon.see_more{% endtrans %}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

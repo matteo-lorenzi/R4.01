@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="it" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="_HLEtGg" resname="boutique.index.Boutique">
+        <source>boutique.index.Boutique</source>
+        <target>Negozio :</target>
+      </trans-unit>
+      <trans-unit id="lBu9WBH" resname="boutique.index.Rayon">
+        <source>boutique.index.Rayon</source>
+        <target>Reparto(i)</target>
+      </trans-unit>
+      <trans-unit id="xTC0QAt" resname="boutique.rayon.title">
+        <source>boutique.rayon.title</source>
+        <target>Reparto -</target>
+      </trans-unit>
+      <trans-unit id="zATGDON" resname="boutique.rayon.heading">
+        <source>boutique.rayon.heading</source>
+        <target>Reparto -</target>
+      </trans-unit>
+      <trans-unit id="IIf.adJ" resname="boutique.rayon.category">
+        <source>boutique.rayon.category</source>
+        <target>Categoria</target>
+      </trans-unit>
+      <trans-unit id="lAzTC.J" resname="boutique.rayon.products">
+        <source>boutique.rayon.products</source>
+        <target>Prodotti</target>
+      </trans-unit>
+      <trans-unit id="l6kRDxS" resname="boutique.rayon.see_more">
+        <source>boutique.rayon.see_more</source>
+        <target>Vedi di più</target>
+      </trans-unit>
+      <trans-unit id="bmD3TT9" resname="templates.navbar.titre">
+        <source>templates.navbar.titre</source>
+        <target>Benvenuto nel Negozio!</target>
+      </trans-unit>
+      <trans-unit id="uSAqq6." resname="templates.navbar.Boutique">
+        <source>templates.navbar.Boutique</source>
+        <target>Negozio</target>
+      </trans-unit>
+      <trans-unit id="BakxtDO" resname="templates.navbar.Contact">
+        <source>templates.navbar.Contact</source>
+        <target>Contatto</target>
+      </trans-unit>
+      <trans-unit id="s0UfsV8" resname="home.index.title">
+        <source>home.index.title</source>
+        <target>Home</target>
+      </trans-unit>
+      <trans-unit id="WPTAwy." resname="home.index.header">
+        <source>home.index.header</source>
+        <target>Negozio R4.01</target>
+      </trans-unit>
+      <trans-unit id="d19ZeT2" resname="home.index.logo_alt">
+        <source>home.index.logo_alt</source>
+        <target>Logo del Negozio</target>
+      </trans-unit>
+      <trans-unit id="rWklkzW" resname="home.index.card_text">
+        <source>home.index.card_text</source>
+        <target>Niente da vendere qui, solo per imparare...</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
