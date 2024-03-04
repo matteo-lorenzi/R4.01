@@ -1,0 +1,126 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon Panier
+{% endblock %}
+
+{% block body %}
+	<style>
+		.example-wrapper {
+			margin: 1em auto;
+			max-width: 800px;
+			width: 95%;
+			font: 18px / 1.5 sans-serif;
+		}
+		.example-wrapper code {
+			background: #F5F5F5;
+			padding: 2px 6px;
+		}
+	</style>
+
+	<main role="main" class="container-fluid">
+		<div class="row">
+			<div class="col-md-10">
+				<div
+					class="main-div">
+					<!-- Début du block body -->
+					<div class="card col-md-12">
+						<div class="card-header">
+							<a class="btn-back text-secondary" href="/fr/boutique/">
+								<i class="fas fa-2x fa-arrow-circle-left"></i>
+							</a>
+							<h3>
+								<i class="fas fa-shopping-cart"></i>
+								<span class="badge badge-pill badge-info">{{ panier|length }}</span>
+								produit(s) - montant :
+								{% for item in panier %}
+									{{ item.produit.prix * item.quantite }}
+									€
+									{% if not loop.last %}<br>
+									{% endif %}
+								{% endfor %}
+
+
+							</h3>
+							<div class="col-md-6 align-self-center btn-group btn-group" role="group">
+								<a class="btn btn-primary" href="/fr/panier/commander">
+									Passer la commande
+								</a>
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="row">
+								<table class="table table-striped table-sm table-hover">
+									<thead>
+										<tr>
+											<th></th>
+											<th>Produit</th>
+											<th class="text-right">Prix</th>
+											<th>Quantité</th>
+											<th class="text-right">Total</th>
+											<th>Supprimer</th>
+										</tr>
+									</thead>
+									<tbody>
+										{% for item in panier %}
+											<tr>
+												<td>
+													<img src="{{ asset(item.produit.visuel) }}" class="cart-img-produit" alt="{{ item.produit.libelle }}">
+												</td>
+												<td>
+													<b>{{ item.produit.libelle }}</b>
+												</td>
+												<td class="text-right">
+													{{ item.produit.prix }}
+													€
+												</td>
+												<td>
+													<a href="{{ path('app_panier_enlever', {'_locale': app.request.locale, 'idProduit': item.produit.id, 'quantite': 1}) }}">
+														<i class="fas fa-minus-square text-muted"></i>
+													</a>
+													{{ item.quantite }}
+													<a href="{{ path('app_panier_ajouter', {'_locale': app.request.locale, 'idProduit': item.produit.id, 'quantite': 1}) }}">
+														<i class="fas fa-plus-square text-muted"></i>
+													</a>
+												</td>
+												<td class="text-right">
+													{{ item.produit.prix * item.quantite }}
+													€
+												</td>
+
+												<td>
+													<a href="{{ path('app_panier_supprimer', {'_locale': app.request.locale, 'idProduit': item.produit.id}) }}">
+														<i class="fas fa-trash text-muted" data-toggle="tooltip" title="Supprimer {{ item.produit.libelle }}" data-placement="right" data-html="true"></i>
+													</a>
+												</td>
+											</tr>
+										{% endfor %}
+									</tbody>
+									<tfoot>
+										<tr>
+											<th class="text-right" colspan="4">
+												Total
+											</th>
+											<th class="text-right">
+												{% for item in panier %}
+													{{ item.produit.prix * item.quantite }}
+													€
+													{% if not loop.last %}<br>
+													{% endif %}
+												{% endfor %}
+											</th>
+											<th>
+												<a href="{{ path('app_panier_vider', {'_locale': app.request.locale}) }}">
+													<i class="fas fa-trash text-muted" data-toggle="tooltip" title="Vider tout le Panier" data-placement="right" data-html="true"></i>
+												</a>
+											</th>
+										</tr>
+									</tfoot>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+{% endblock %}

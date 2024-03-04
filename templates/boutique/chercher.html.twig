@@ -1,0 +1,47 @@
+{# templates/boutique/chercher.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Résultats de recherche
+{% endblock %}
+
+{% block body %}
+	<div class="container mt-4">
+		<h3>
+			<i class="fas fa-store"></i>
+
+			Résultats de recherche pour "{{ recherche }}"
+			<span class="badge badge-pill badge-info">{{ produits|length }}</span> produit(s)
+		</h3>
+		{% if produits|length > 0 %}
+			<div class="row">
+				{% for produit in produits %}
+					<div class="col-md-4">
+						<div class="card mb-4 shadow-sm">
+							{% if produit.visuel %}
+								<img class="bd-placeholder-img card-img-top" src="{{ asset(produit.visuel) }}" alt="{{ produit.libelle }}">
+							{% else %}
+								<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveaspectratio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail">
+									<title>Placeholder</title>
+									<rect width="100%" height="100%" fill="#55595c"></rect>
+									<text x="50%" y="50%" fill="#eceeef" dy=".3em">Pas d'image</text>
+								</svg>
+							{% endif %}
+							<div class="card-body">
+								<h5 class="card-title">{{ produit.libelle }}</h5>
+								<p class="card-text">{{ produit.texte|slice(0, 150) ~ '...' }}</p>
+								<div class="d-flex justify-content-between align-items-center">
+									<small class="text-muted">Prix :
+										{{ produit.prix }}
+										€</small>
+								</div>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		{% else %}
+			<p>Aucun produit trouvé pour votre recherche "{{ recherche }}". Veuillez essayer avec d'autres termes.</p>
+		{% endif %}
+	</div>
+{% endblock %}
